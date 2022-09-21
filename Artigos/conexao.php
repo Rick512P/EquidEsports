@@ -1,6 +1,6 @@
 <?php
 
-    define("SERVER", "172.0.0.2");
+    define("SERVER", "127.0.0.2");
     define("USER", "root");
     define("PASS", "root");
     define("EquidDataBase", "textos");
