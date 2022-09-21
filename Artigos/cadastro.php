@@ -12,6 +12,6 @@ include_once('artigoDao.php');
     $rodape = $_POST['rodape'];
     $link_original = $_POST['link_original'];
 
-    insereArtigo($titulo1, $subtitulo, $nome_autor, $nome_redator, $paragrafos);
+    insereArtigo($titulo1, $subtitulo, $nome_autor, $nome_redator, $paragrafos, $rodape, $link_original);
 
     echo '<a class="botoes cor-gradiente text-white" href="index.php" role="button">Voltar</a>';
