@@ -10,29 +10,28 @@
 
     $pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
 
-    $array_page = 2;
+    $array_page = 3;
 
     $number_page = "SELECT COUNT(idartigos) AS pgs FROM artigos";
 
     $resultado_pg = $conexao->prepare($number_page);
 
     $start = ($array_page * $pagina) - $array_page;
-    
+
+    $row_pg = $resultado_pg->fetch(PDO::FETCH_ASSOC);    
+
+    $quant_pgs = ceil(($row_pg['pgs'] ?? 2) / $array_page);
+
+    $retorna = $pagina - 1;
+    $avanca = $pagina + 1;    
+
+    $max_link = 2;
+
+    //textos
+
     $sql = "SELECT * FROM artigos LIMIT $start, $array_page";
     $stmt = $conexao->prepare($sql);
     $stmt->execute();
-
-    $row_pg = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-    //echo para teste de pgs
-    //echo $row_pg['$pgs']
-
-    $quant_pgs = ceil($row_pg['pgs'] / $array_page);
-
-    $retorna = $pagina_atual - 1;
-    $avanca = $pagina_atual + 1;    
-
-    $max_link = 2;
 
     
 ?>
@@ -50,47 +49,55 @@
 </head>
 
 <body>
-    <div class="container" style="border: 4px solid black; padding: 0; margin-top: 0%;">
-        <form action="busca.php" method="POST">
-            <div class="imagem-topo">
-                <h4 class="text-center text-white">
-                    <b>Artigos</b>
+    <div class="container" style="border: 4px solid black; padding: 0;">
+        <div class="imagem-topo">
+            <h4 class="text-center text-white"> 
+                <b>Artigos</b>
+            </h4>                    
+        </div>
+        <div class="container" style="padding: 5%;">
+            <h4>
+                <?php
+                    //textos
+
+                    while($row_artigos = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        echo "ID: " . $row_artigos['idartigos'] . "<br>" . "--------" . "</br>";
+                        echo $row_artigos['titulo1'] . "</br>";
+                        echo $row_artigos['subtitulo'] . "</br>";
+                        echo $row_artigos['paragrafos'] . "</br>";
+                        echo $row_artigos['rodape'] . "</br>";
+                        echo "Link: " . $row_artigos['link_original'] . "</br><hr>";
+                    }
+                ?>
+                <div class="text-center">
                     <?php
-                        //textos
-
-                        while($row_artigos = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                            "ID: " . $row_artigos['idartigos'] . "</br>";
-                            echo $row_artigos['titulo1'] . "</br>";
-                            echo $row_artigos['subtitulo'] . "</br>";
-                            echo $row_artigos['paragrafos'] . "</br>";
-                            echo $row_artigos['rodape'] . "</br>";
-                            echo "link" . $row_artigos['link_original'] . "</br><hr>";
+                    //paginação                    
+                    echo "<a href='Artigos.php?pagina=1'> <<  ";
+                    for($pag_ant = $pagina - $max_link; $pag_ant <= $pagina - 1; $pag_ant ++){
+                        if ($pag_ant >=1){
+                            echo "<a href='Artigos.php?pagina=$retorna'> < ";
+                            echo "<a href='Artigos.php?pagina=$pag_ant'> $pag_ant";
                         }
-
-                        //paginação
-
-                        echo "<a = href'Artigos.php?pagina=1'> <<";
-                        for($pag_ant = $pagina_atual - $max_link; $pag_ant <= $pagina_atual - 1; $pag_ant ++){
-                            if ($pag_ant >=1){
-                                echo "<a = href'Artigos.php?pagina=$retorna'> < ";
-                                echo "<a = href'Artigos.php?pagina=$pag_ant'> $pag_ant";
-                            }
+                    }
+                    echo $pagina;
+                    for($pag_pos = $pagina + 1; $pag_pos <= $pagina + $max_link; $pag_pos ++){
+                        if ($pag_pos <= $quant_pgs){
+                            echo "<a href='Artigos.php?pagina=$pag_pos' > $pag_pos";
                         }
-                        print "$pagina_atual";
-                        for($pag_pos = $pagina_atual + 1; $pag_pos <= $pagina_atual + $max_link; $pag_pos ++){
-                            if ($pag_pos <= $quant_pgs){
-                                echo "<a = href'Artigos.php?pagina=$pag_pos'> $pag_pos";
-                                echo "<a = href'Artigos.php?pagina=$retorna'> < ";
-
-                            }
-                        }
-                        echo "<a = href'Artigos.php?pagina=$avanca'> >";
-                        echo "<a = href'Artigos.php?pagina=$quant_pgs'> >>";
+                    }
+                    if ($pag_pos <= $quant_pgs){
+                        echo "<a href='Artigos.php?pagina=$avanca'> > ";
+                    }
+                    echo "<a href='Artigos.php?pagina=$quant_pgs'>   >>";
                     ?>
-                    <a class="botoes cor-gradiente text-white" href="telaAdicionaArtigo.php" role="button">Cadastrar Novo Artigo</a>
-                </h4>
-            </div>
-        </form>
+                </div>
+            </h4>
+        </div>
+    </div>
+    <div class="text-center" style="padding: 0; margin-top: 2%;">
+        <h2>
+            <a class="botoes cor-gradiente text-white" href="telaAdicionaArtigo.php" role="button">Cadastrar Novo Artigo</a>
+        </h5>
     </div>
 
 </body>
