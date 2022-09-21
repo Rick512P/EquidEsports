@@ -1,7 +1,6 @@
 <?php
 
-
-    define("SERVER", "172.0.0.2:3306");
+    define("SERVER", "172.0.0.2");
     define("USER", "root");
     define("PASS", "root");
     define("EquidDataBase", "textos");
@@ -17,5 +16,3 @@
         }
 
 }
-
- ?>
