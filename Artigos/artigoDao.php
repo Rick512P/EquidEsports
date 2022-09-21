@@ -2,7 +2,7 @@
 
     include_once("conexao.php");
 
-    function insereArtigo($titulo1, $subtitulo, $nome_autor, $nome_redator, $paragrafos)
+    function insereArtigo($titulo1, $subtitulo, $nome_autor, $nome_redator, $paragrafos, $rodape, $link_original)
     {
         $conexao = criaConexao();
 
