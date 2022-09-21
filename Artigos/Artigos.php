@@ -59,12 +59,12 @@
                         //textos
 
                         while($row_artigos = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                            array_push($artigos, "ID: " . $row_artigos['idartigos'] . "</br>" 
-                            . $row_artigos['titulo1'] . "</br>"
-                            . $row_artigos['subtitulo'] . "</br>"
-                            . $row_artigos['paragrafos'] . "</br>"
-                            . $row_artigos['rodape'] . "</br>" 
-                            . $row_artigos['link_original'] . "</br><hr>");
+                            "ID: " . $row_artigos['idartigos'] . "</br>";
+                            echo $row_artigos['titulo1'] . "</br>";
+                            echo $row_artigos['subtitulo'] . "</br>";
+                            echo $row_artigos['paragrafos'] . "</br>";
+                            echo $row_artigos['rodape'] . "</br>";
+                            echo "link" . $row_artigos['link_original'] . "</br><hr>";
                         }
 
                         //paginação
