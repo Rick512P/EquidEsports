@@ -34,20 +34,7 @@
 
     $max_link = 2;
 
-    //textos
-
-    while($row_artigos = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        array_push($artigos, "ID: " . $row_artigos['idartigos'] . "</br>" 
-        . $row_artigos['titulo1'] . "</br>"
-        . $row_artigos['subtitulo'] . "</br>"
-        . $row_artigos['paragrafos'] . "</br>"
-        . $row_artigos['rodape'] . "</br>"
-        . "Link: " . $row_artigos['link_original'] . "</br><hr>");
-    }
-
-    $artigos = array();
-
-
+    
 ?>
 
 <!DOCTYPE html>
@@ -69,8 +56,18 @@
                 <h4 class="text-center text-white">
                     <b>Artigos</b>
                     <?php
+                        //textos
 
-                        print_r($artigos);
+                        while($row_artigos = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                            array_push($artigos, "ID: " . $row_artigos['idartigos'] . "</br>" 
+                            . $row_artigos['titulo1'] . "</br>"
+                            . $row_artigos['subtitulo'] . "</br>"
+                            . $row_artigos['paragrafos'] . "</br>"
+                            . $row_artigos['rodape'] . "</br>" 
+                            . $row_artigos['link_original'] . "</br><hr>");
+                        }
+
+                        //paginação
 
                         echo "<a = href'Artigos.php?pagina=1'> <<";
                         for($pag_ant = $pagina_atual - $max_link; $pag_ant <= $pagina_atual - 1; $pag_ant ++){
