@@ -20,7 +20,7 @@
 
     $row_pg = $resultado_pg->fetch(PDO::FETCH_ASSOC);    
 
-    $quant_pgs = ceil(($row_pg['pgs'] ?? 2) / $array_page);
+    $quant_pgs = ceil(($row_pg['pgs'] ?? 3) / $array_page);
 
     $retorna = $pagina - 1;
     $avanca = $pagina + 1;    
@@ -73,10 +73,12 @@
                     <?php
                     //paginação                    
                     echo "<a href='Artigos.php?pagina=1'> <<  ";
+                    if($pagina >= 2){
+                        echo "<a href='Artigos.php?pagina=$retorna'> < ";
+                    }
                     for($pag_ant = $pagina - $max_link; $pag_ant <= $pagina - 1; $pag_ant ++){
                         if ($pag_ant >=1){
-                            echo "<a href='Artigos.php?pagina=$retorna'> < ";
-                            echo "<a href='Artigos.php?pagina=$pag_ant'> $pag_ant";
+                            echo "<a href='Artigos.php?pagina=$pag_ant'> $pag_ant ";
                         }
                     }
                     echo $pagina;
@@ -85,7 +87,8 @@
                             echo "<a href='Artigos.php?pagina=$pag_pos' > $pag_pos";
                         }
                     }
-                    if ($pag_pos <= $quant_pgs){
+
+                    if ($pagina < $quant_pgs){
                         echo "<a href='Artigos.php?pagina=$avanca'> > ";
                     }
                     echo "<a href='Artigos.php?pagina=$quant_pgs'>   >>";
