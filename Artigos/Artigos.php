@@ -12,15 +12,15 @@
 
     $array_page = 3;
 
-    $number_page = "SELECT COUNT(idartigos) AS pgs FROM artigos";
-
-    $resultado_pg = $conexao->prepare($number_page);
-
     $start = ($array_page * $pagina) - $array_page;
 
-    $row_pg = $resultado_pg->fetch(PDO::FETCH_ASSOC);    
+    $number_page = "SELECT COUNT(idartigos) FROM artigos";
+    $row_page = $conexao->prepare($number_page);
+    $row_page->execute();    
 
-    $quant_pgs = ceil(($row_pg['pgs'] ?? 3) / $array_page);
+    $row_pg = $row_page->fetch();
+
+    $count_pgs = ceil($row_pg[0] / $array_page);
 
     $retorna = $pagina - 1;
     $avanca = $pagina + 1;    
@@ -49,7 +49,7 @@
 </head>
 
 <body>
-    <div class="container" style="border: 4px solid black; padding: 0;">
+    <div style="border: 4px solid black; padding: 0%;">
         <div class="imagem-topo">
             <h4 class="text-center text-white"> 
                 <b>Artigos</b>
@@ -61,47 +61,53 @@
                     //textos
 
                     while($row_artigos = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                        echo "ID: " . $row_artigos['idartigos'] . "<br>" . "--------" . "</br>";
-                        echo $row_artigos['titulo1'] . "</br>";
-                        echo $row_artigos['subtitulo'] . "</br>";
-                        echo $row_artigos['paragrafos'] . "</br>";
-                        echo $row_artigos['rodape'] . "</br>";
-                        echo "Link: " . $row_artigos['link_original'] . "</br><hr>";
+                        $LINK=$row_artigos['link_original'];
+                        $update=$row_artigos['idartigos'];
+                        echo "ID: <b>" . $row_artigos['idartigos'] . " ". "<a href='./telaAdicionaArtigo.php'><img src='./css/update.png' height='24' width='24'></a>" . "</b><br/>--------<br/>";
+                        echo "Título: <b>" . $row_artigos['titulo1'] . "</b><br/>";
+                        echo "Subtítulo: <b>" . $row_artigos['subtitulo'] . "</b><br/>";
+                        echo "Autor(a/as/es): <b>" . $row_artigos['nome_autor'] . "</b><br><br/>";
+                        echo $row_artigos['paragrafos'] . "</b><br/>";
+                        echo $row_artigos['rodape'] . "<br/><br/>";
+                        echo "<a href='$LINK'>Link</a>";
+                        echo "<br/> <hr>";
                     }
                 ?>
+
                 <div class="text-center">
                     <?php
                     //paginação                    
-                    echo "<a href='Artigos.php?pagina=1'> <<  ";
+                    echo "<a href='Artigos.php?pagina=1'> <<  </a>";
                     if($pagina >= 2){
-                        echo "<a href='Artigos.php?pagina=$retorna'> < ";
+                        echo "<a href='Artigos.php?pagina=$retorna'> < </a>";
                     }
                     for($pag_ant = $pagina - $max_link; $pag_ant <= $pagina - 1; $pag_ant ++){
                         if ($pag_ant >=1){
-                            echo "<a href='Artigos.php?pagina=$pag_ant'> $pag_ant ";
+                            echo "<a href='Artigos.php?pagina=$pag_ant'> $pag_ant </a>";
                         }
                     }
                     echo $pagina;
                     for($pag_pos = $pagina + 1; $pag_pos <= $pagina + $max_link; $pag_pos ++){
-                        if ($pag_pos <= $quant_pgs){
-                            echo "<a href='Artigos.php?pagina=$pag_pos' > $pag_pos";
+                        if ($pag_pos <= $count_pgs){
+                            echo "<a href='Artigos.php?pagina=$pag_pos' > $pag_pos </a>";
                         }
                     }
 
-                    if ($pagina < $quant_pgs){
-                        echo "<a href='Artigos.php?pagina=$avanca'> > ";
+                    if ($pagina < $count_pgs){
+                        echo "<a href='Artigos.php?pagina=$avanca'> > </a>";
                     }
-                    echo "<a href='Artigos.php?pagina=$quant_pgs'>   >>";
+                    echo "<a href='Artigos.php?pagina=$count_pgs'>   >></a>";
                     ?>
                 </div>
             </h4>
+            <div class="text-center" style="padding: 0%; margin: 2%; margin-top:5%;">
+                <h2>
+                    <a class="botoes cor-gradiente text-white" style="border: 4px solid black;" href="telaAdicionaArtigo.php" role="button">Cadastrar Novo Artigo</a>
+                </h2>
+            </div>
         </div>
     </div>
-    <div class="text-center" style="padding: 0; margin-top: 2%;">
-        <h2>
-            <a class="botoes cor-gradiente text-white" href="telaAdicionaArtigo.php" role="button">Cadastrar Novo Artigo</a>
-        </h5>
-    </div>
+    
 
 </body>
 
