@@ -17,7 +17,7 @@
 
 <body>
     <div class="container" style="border: 4px solid black; padding: 0; margin-top: 0%;">
-        <form action="cadastro.php" method="POST">
+        <form action="editar.php" method="POST">
             <div class="imagem-topo">
                 <h4 class="text-center text-white">
                     <b>Implementação de Artigos</b>
