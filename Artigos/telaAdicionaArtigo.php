@@ -19,32 +19,32 @@
                 </h4>
             </div>
             <div class="mb-3 usuario" style="margin: 40px 0 40px 0; padding: 0 40px 0 40px;">
-                <label for="ImputTitulo1" class="form-label">Título</label>
-                <input type="text" class="form-control" name="titulo1" id="ImputTitulo1">
+                <label for="InputTitulo1" class="form-label">Título</label>
+                <input type="text" class="form-control" name="titulo1" id="InputTitulo1">
             </div>
             <div class="mb-3 usuario" style="margin: 40px 0 40px 0; padding: 0 40px 0 40px;">
-                <label for="ImputSubtitulo" class="form-label">Subtítulo</label>
-                <input type="text" class="form-control" name="subtitulo" id="ImputSubtitulo">
+                <label for="InputSubtitulo" class="form-label">Subtítulo</label>
+                <input type="text" class="form-control" name="subtitulo" id="InputSubtitulo">
             </div>
             <div class="mb-3 usuario" style="margin: 40px 0 40px 0; padding: 0 40px 0 40px;">
-                <label for="ImputAutor" class="form-label">Autor</label>
-                <input type="text" class="form-control" name="nome_autor" id="ImputAutor">
+                <label for="InputAutor" class="form-label">Autor</label>
+                <input type="text" class="form-control" name="nome_autor" id="InputAutor">
             </div>
             <div class="mb-3 usuario" style="margin: 40px 0 40px 0; padding: 0 40px 0 40px;">
-                <label for="ImputRedator" class="form-label">Redator</label>
-                <input type="text" class="form-control" name="nome_redator" id="ImputRedator">
+                <label for="InputRedator" class="form-label">Redator</label>
+                <input type="text" class="form-control" name="nome_redator" id="InputRedator">
             </div>
             <div class="mb-3 usuario" style="margin: 40px 0 40px 0; padding: 0 40px 0 40px;">
-                <label for="ImputParagrafo" class="form-label">Texto</label>
-                <input type="text" class="form-control" name="paragrafos" id="ImputParagrafo">
+                <label for="InputParagrafo" class="form-label">Texto</label>
+                <input type="text" class="form-control" name="paragrafos" id="InputParagrafo">
             </div>
             <div class="mb-3 usuario" style="margin: 40px 0 40px 0; padding: 0 40px 0 40px;">
-                <label for="ImputRodape" class="form-label">Rodapé</label>
-                <input type="text" class="form-control" name="rodape" id="ImputRodape">
+                <label for="InputRodape" class="form-label">Rodapé</label>
+                <input type="text" class="form-control" name="rodape" id="InputRodape">
             </div>
             <div class="mb-3 usuario" style="margin: 40px 0 40px 0; padding: 0 40px 0 40px;">
-                <label for="ImputLink" class="form-label">URL</label>
-                <input type="text" class="form-control" name="link_original" id="ImputLink">
+                <label for="InputLink" class="form-label">URL</label>
+                <input type="text" class="form-control" name="link_original" id="InputLink">
             </div>
             <div class="container" style="margin: 40px 0 40px 0;">
                 <button type="submit" class="botoes cor-gradiente text-white link">Inserir Artigo</button>
