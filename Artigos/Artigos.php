@@ -77,8 +77,9 @@
                 <div class="text-center">
                     <?php
                     //paginação                    
-                    echo "<a href='Artigos.php?pagina=1'> <<  </a>";
+                    
                     if($pagina >= 2){
+                        echo "<a href='Artigos.php?pagina=1'> <<  </a>";
                         echo "<a href='Artigos.php?pagina=$retorna'> < </a>";
                     }
                     for($pag_ant = $pagina - $max_link; $pag_ant <= $pagina - 1; $pag_ant ++){
@@ -95,8 +96,9 @@
 
                     if ($pagina < $count_pgs){
                         echo "<a href='Artigos.php?pagina=$avanca'> > </a>";
+                        echo "<a href='Artigos.php?pagina=$count_pgs'>   >></a>";
                     }
-                    echo "<a href='Artigos.php?pagina=$count_pgs'>   >></a>";
+                    
                     ?>
                 </div>
             </h4>
