@@ -23,16 +23,9 @@
             include_once('artigoDao.php');
 
             date_default_timezone_set('America/Sao_Paulo');
-                $idartigos = $_POST['idartigos'];
-                $titulo1 = $_POST['titulo1'];
-                $subtitulo = $_POST['subtitulo'];
-                $nome_autor = $_POST['nome_autor'];
-                $nome_redator = $_POST['nome_redator'];
-                $paragrafos = $_POST['paragrafos'];
-                $rodape = $_POST['rodape'];
-                $link_original = $_POST['link_original'];
+                $idartigos = filter_input(INPUT_GET,'id', FILTER_SANITIZE_NUMBER_INT);
 
-                editaArtigo($idartigos, $titulo1, $subtitulo, $nome_autor, $nome_redator, $paragrafos, $rodape, $link_original);
+                apagaArtigo($idartigos);
         ?>
     </body>
 </html>

@@ -32,10 +32,10 @@
 
         $conexao = criaConexao();
 
-        $sql = "UPDATE artigos set titulo1=:titulo1, subtitulo=:subtitulo, nome_autor=:nome_autor, nome_redator=:nome_redator, paragrafos=:paragrafos, rodape=:rodape , link_original=:link_original where idartigos=:id";
+        $sql = "UPDATE artigos set titulo1=:titulo1, subtitulo=:subtitulo, nome_autor=:nome_autor, nome_redator=:nome_redator, paragrafos=:paragrafos, rodape=:rodape , link_original=:link_original where idartigos=:idartigos";
 
         $stmt = $conexao->prepare($sql);
-        $stmt->bindParam(":id", $idartigos);
+        $stmt->bindParam(":idartigos", $idartigos);
         $stmt->bindParam(":titulo1", $titulo1);
         $stmt->bindParam(":subtitulo", $subtitulo);
         $stmt->bindParam(":nome_autor", $nome_autor);
@@ -43,6 +43,26 @@
         $stmt->bindParam(":paragrafos", $paragrafos);
         $stmt->bindParam(":rodape", $rodape);
         $stmt->bindParam(":link_original", $link_original);
+
+        try {
+            if ($stmt->execute()) {
+            } else {
+                print_r($stmt->errorInfo());
+            }
+        } catch (PDOException $e) {
+            echo "Erro na conexão. Erro gerado: " . $e->getMessage();
+        }        
+    }
+
+    function apagaArtigo($idartigos)
+    {
+
+        $conexao = criaConexao();
+
+        $sql = "DELETE from artigos where idartigos=:idartigos";
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindParam(":idartigos", $idartigos);
 
         try {
             if ($stmt->execute()) {
