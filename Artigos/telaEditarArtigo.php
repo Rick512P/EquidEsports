@@ -3,7 +3,7 @@
 use LDAP\Result;
 
     include_once('artigoDao.php');
-    include_once("conexao.php");
+    include_once("../conexoes/conexaoartigo.php");
 
     $idartigo = filter_input(INPUT_GET,'id', FILTER_SANITIZE_NUMBER_INT);
     $result = "SELECT * FROM artigos WHERE idartigos = '$idartigo' ";

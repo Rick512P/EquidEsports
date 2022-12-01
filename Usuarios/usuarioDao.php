@@ -1,6 +1,6 @@
 <?php
 
-    include_once("conexao.php");
+    include_once('../conexoes/conexaousuario.php');
 
     function insereUsuario($nome, $email, $senha, $data_de_nascimento, $CPF, $ADMINISTRADOR)
     {

@@ -3,7 +3,8 @@
 use LDAP\Result;
 
     include_once('usuarioDao.php');
-    include_once("conexao.php");
+    
+    include_once('../conexoes/conexaousuario.php');
 
     $idusers = filter_input(INPUT_GET,'id', FILTER_SANITIZE_NUMBER_INT);
     $result = "SELECT * FROM users WHERE idusers = '$idusers' ";

@@ -1,7 +1,7 @@
 <?php
     //Conexão com o Banco
 
-    include_once('conexao.php');
+    include_once('../conexoes/conexaoartigo.php');
     $conexao = criaConexao();
 
     //Paginação
