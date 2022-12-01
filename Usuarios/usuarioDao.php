@@ -71,3 +71,23 @@
             echo "Erro na conexão. Erro gerado: " . $e->getMessage();
         }        
     }
+
+    function login($nome, $senha){
+        $conexao = criaConexao();
+
+        $sql = "SELECT nome, email, senha, data_de_nascimento, CPF, ADMIN from users where nome = :nome' and senha = md5(:senha)";
+
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindParam(":nome", $nome);
+        $stmt->bindParam(":senha", $senha);
+
+        try {
+            if ($stmt->execute()) {
+            } else {
+                print_r($stmt->errorInfo());
+            }
+        } catch (PDOException $e) {
+            echo "Erro na conexão. Erro gerado: " . $e->getMessage();
+        }  
+        
+    }
