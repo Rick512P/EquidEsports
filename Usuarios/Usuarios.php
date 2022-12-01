@@ -46,7 +46,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Usuários</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -66,8 +66,9 @@
                         echo "ID: <b>" . $row_usuarios['idusers'] . " ". "<a href='./telaEditarUsuario.php?id=".$row_usuarios['idusers']."'><img src='./css/update.png' height='24' width='24'></a>" . " ". "<a href='./apagar.php?id=".$row_usuarios['idusers']."'><img src='./css/delete.png' height='24' width='24'></a>" . "</b><br/>--------<br/>";
                         echo "Nome: <b>" . $row_usuarios['nome'] . "</b><br/>";
                         echo "E-mail: <b>" . $row_usuarios['email'] . "</b><br/>";
-                        echo $row_usuarios['data_de_nascimento'] . "</b><br/>";
-                        echo "CPF: <b>" . $row_usuarios['CPF'] . "<br/><br/>";
+                        echo "Data de Nascimento: <b>" . $row_usuarios['data_de_nascimento'] . "</b></b><br/>";
+                        echo "CPF: <b>" . $row_usuarios['CPF'] . "</b><br/>";
+                        echo "Admin: <b>" . $row_usuarios['ADMIN'] . "</b><br/><br/>";
                         echo "<br/> <hr>";
                     }
                 ?>

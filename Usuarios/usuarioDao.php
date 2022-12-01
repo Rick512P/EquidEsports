@@ -6,7 +6,7 @@
     {
         $conexao = criaConexao();
 
-        $sql = "INSERT INTO users (nome, email, senha, data_de_nascimento, CPF, ADMIN) VALUES (:nome, :email, :senha, :data_de_nascimento, :CPF, :ADMINISTRADOR)";
+        $sql = "INSERT INTO users (nome, email, senha, data_de_nascimento, CPF, ADMIN) VALUES (:nome, :email, md5(:senha), :data_de_nascimento, :CPF, :ADMINISTRADOR)";
 
         $stmt = $conexao->prepare($sql);
         $stmt->bindParam(":nome", $nome);
@@ -31,7 +31,7 @@
 
         $conexao = criaConexao();
 
-        $sql = "UPDATE users set nome=:nome, email=:email, senha=:senha, data_de_nascimento=:data_de_nascimento, CPF=:CPF, ADMIN=:ADMINISTRADOR where idusers=:idusers";
+        $sql = "UPDATE users set nome=:nome, email=:email, senha=md5(:senha), data_de_nascimento=:data_de_nascimento, CPF=:CPF, ADMIN=:ADMINISTRADOR where idusers=:idusers";
 
         $stmt = $conexao->prepare($sql);
         $stmt->bindParam(":idusers", $idusers);
