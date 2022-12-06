@@ -63,7 +63,7 @@
                     while($row_artigos = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         $LINK=$row_artigos['link_original'];
                         $update=$row_artigos['idartigos'];
-                        echo "ID: <b>" . $row_artigos['idartigos'] . " ". "<a href='./telaEditarArtigo.php?id=".$row_artigos['idartigos']."'><img src='./css/update.png' height='24' width='24'></a>" . " ". "<a href='./apagar.php?id=".$row_artigos['idartigos']."'><img src='./css/delete.png' height='24' width='24'></a>" . "</b><br/>--------<br/>";
+                        echo "ID: <b>" . $row_artigos['idartigos'] . " ". "<a href='./telaEditarArtigo.php?id=".$row_artigos['idartigos']."'><img src='./css/update.png' height='24' width='24'></a>" . " ". "<a href='./apagar.php?id=".$row_artigos['idartigos']."'><img src='../css/delete.png' height='24' width='24'></a>" . "</b><br/>--------<br/>";
                         echo "Título: <b>" . $row_artigos['titulo1'] . "</b><br/>";
                         echo "Subtítulo: <b>" . $row_artigos['subtitulo'] . "</b><br/>";
                         echo "Autor(a/as/es): <b>" . $row_artigos['nome_autor'] . "</b><br><br/>";
@@ -73,7 +73,6 @@
                         echo "<br/> <hr>";
                     }
                 ?>
-
                 <div class="text-center">
                     <?php
                     //paginação                    

@@ -33,8 +33,8 @@ session_start();
             unset($_SESSION['nao_autenticado']);
             ?>
             <div class="mb-3 usuario" style="margin: 40px 0 40px 0; padding: 0 40px 0 40px;">
-                <label for="InputNome" class="form-label">E-mail</label>
-                <input type="text" class="form-control" name="usuario" id="InputNome">
+                <label for="InputNome" class="form-label">Nome</label>
+                <input type="text" class="form-control" name="nome" id="InputNome">
             </div>
             <div class="mb-3 usuario" style="margin: 40px 0 40px 0; padding: 0 40px 0 40px;">
                 <label for="InputSenha" class="form-label">Senha</label>

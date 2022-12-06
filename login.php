@@ -6,24 +6,32 @@ include_once("./conexoes/conexaousuario.php");
 
 $conexao = criaConexao();  
 
-if(empty($_POST['usuario']) || empty($_POST['senha'])) {
+if(empty($_POST['nome']) || empty($_POST['senha'])) {
 	header('Location: index.php');
 	exit();
 }
 
-$sql = "SELECT * FROM users where email=:usuario and senha=md5(:senha) or nome=:usuario and senha=md5(:senha)";
+
+$name = $_POST['nome'];
+$nome = "$name";
+$password = $_POST['senha'];
+$senha="$password";
+
+$sql = "SELECT * FROM users where (email=:nome and senha=md5(:senha)) or (nome=:nome and senha=md5(:senha))";
 
 $stmt = $conexao->prepare($sql);
-$stmt->bindParam(":usuario",  $_POST['usuario']);
-$stmt->bindParam(":senha", $_POST['senha']);
-
+$stmt->bindParam(":nome", $nome );
+$stmt->bindParam(":senha", $senha);
 $stmt->execute();
 
-$testa = $stmt['nome'];
+$test =  $stmt->fetch();
 
-if ($testa != NULL){
+print_r($test);
+
+if ($test != NULL){
     header('Location: opcoes.php');
 
 }else{
     echo "Senha ou e-mail incorreto(s)";
+    print_r($test);
 }

@@ -63,7 +63,7 @@
 
                     while($row_usuarios = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         $update=$row_usuarios['idusers'];
-                        echo "ID: <b>" . $row_usuarios['idusers'] . " ". "<a href='./telaEditarUsuario.php?id=".$row_usuarios['idusers']."'><img src='./css/update.png' height='24' width='24'></a>" . " ". "<a href='./apagar.php?id=".$row_usuarios['idusers']."'><img src='./css/delete.png' height='24' width='24'></a>" . "</b><br/>--------<br/>";
+                        echo "ID: <b>" . $row_usuarios['idusers'] . " ". "<a href='./telaEditarUsuario.php?id=".$row_usuarios['idusers']."'><img src='./css/update.png' height='24' width='24'></a>" . " ". "<a href='./apagar.php?id=".$row_usuarios['idusers']."'><img src='../css/delete.png' height='24' width='24'></a>" . "</b><br/>--------<br/>";
                         echo "Nome: <b>" . $row_usuarios['nome'] . "</b><br/>";
                         echo "E-mail: <b>" . $row_usuarios['email'] . "</b><br/>";
                         echo "Data de Nascimento: <b>" . $row_usuarios['data_de_nascimento'] . "</b></b><br/>";
