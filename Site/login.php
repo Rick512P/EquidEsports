@@ -33,5 +33,4 @@ if ($test != NULL){
 
 }else{
     echo "Senha ou e-mail incorreto(s)";
-    print_r($test);
 }

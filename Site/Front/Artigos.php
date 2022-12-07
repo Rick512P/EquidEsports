@@ -49,29 +49,36 @@
 </head>
 
 <body>
-    <div style="border: 4px solid black; padding: 0%;">
+    <div style="border: 4px solid black; ">
         <div class="imagem-topo">
             <h4 class="text-center text-white"> 
                 <b>Artigos</b>
             </h4>                    
         </div>
-        <div class="container" style="padding: 5%;">
+        <div class="container" style="padding: 8%;">
             <h4>
                 <?php
                     //textos
+                    function text_limiter_caracter($stmt, $limit, $suffix = '...'){
+                        while (substr($stmt, $limit, 1) != ' ') {
+                            $limit--;
+                        }
+
+                        if (strlen($stmt) <= $limit) {
+                            return $stmt;
+                        }
+
+                        return substr($stmt, 0, $limit + 1) . $suffix;
+                    }
 
                     while($row_artigos = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                        $LINK=$row_artigos['link_original'];
-                        $update=$row_artigos['idartigos'];
-                        echo "ID: <b>" . $row_artigos['idartigos'] . " ". "<a href='./telaEditarArtigo.php?id=".$row_artigos['idartigos']."'><img src='../css/update.png' height='24' width='24'></a>" . " ". "<a href='./apagar.php?id=".$row_artigos['idartigos']."'><img src='../css/delete.png' height='24' width='24'></a>" . "</b><br/>--------<br/>";
                         echo "Título: <b>" . $row_artigos['titulo1'] . "</b><br/>";
-                        echo "Subtítulo: <b>" . $row_artigos['subtitulo'] . "</b><br/>";
                         echo "Autor(a/as/es): <b>" . $row_artigos['nome_autor'] . "</b><br><br/>";
-                        echo $row_artigos['paragrafos'] . "</b><br/>";
-                        echo $row_artigos['rodape'] . "<br/><br/>";
-                        echo "<a href='$LINK'>Link</a>";
+                        echo text_limiter_caracter($row_artigos['paragrafos'], 300,"<a href='./leitor.php?id=".$row_artigos['idartigos'] . "'>...") . " " . "</a>" . "</b><br/>";
                         echo "<br/> <hr>";
+
                     }
+                    
                 ?>
                 <div class="text-center">
                     <?php
@@ -101,11 +108,6 @@
                     ?>
                 </div>
             </h4>
-            <div class="text-center" style="padding: 0%; margin: 2%; margin-top:5%;">
-                <h2>
-                    <a class="botoes cor-gradiente text-white" style="border: 4px solid black;" href="telaAdicionaArtigo.php" role="button">Cadastrar Novo Artigo</a>
-                </h2>
-            </div>
         </div>
     </div>
     
