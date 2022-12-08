@@ -13,7 +13,7 @@ body {
 }
 
 .cor-gradiente {
-    background-image: linear-gradient(to right, crimson, indigo);
+    background-image: linear-gradient(to right, rgb(252, 82, 3), rgb(20, 219, 143));
 }
 
 #wrapper .container {
@@ -24,7 +24,7 @@ body {
 
 .imagem-topo {
     padding: 40px 40px 20px 40px;
-    background-image: linear-gradient(to right, crimson, indigo);
+    background-image: linear-gradient(to right, rgb(252, 82, 3), rgb(20, 219, 143));
     border-bottom: 4px solid black;
 }
 
@@ -55,7 +55,7 @@ body {
 
 .botoes {
     padding: 5px 10px 5px 10px;
-    background-image: linear-gradient(to right, crimson, indigo);
+    background-image: linear-gradient(to right, rgb(252, 82, 3), rgb(20, 219, 143));
     min-width: 120px;
     box-shadow: 2px 2px black;
     font-weight: 500;
