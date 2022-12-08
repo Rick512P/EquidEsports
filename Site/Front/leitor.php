@@ -34,7 +34,7 @@ use LDAP\Result;
                 <b><?php echo($row['titulo1']); ?></b>
             </h4>
         </div>
-        
+                
         <div class="mb-3 usuario" style="margin: 40px 0 40px 0; padding: 0 40px 0 40px;">
             <b> Título: </b> 
                 <a> 
@@ -46,6 +46,7 @@ use LDAP\Result;
                     <?php echo($row['subtitulo']); ?> 
                 </a> 
             <br>
+            <br>
             <a>
                 <?php echo($row['paragrafos']); ?>
             </a> 
@@ -56,19 +57,20 @@ use LDAP\Result;
                     <?php echo($row['rodape']); ?>
                 </a> 
             <br>
-            <b> Link Original: </b> 
             <a href='<?php echo($row['link_original']); ?>'>
-                <?php echo($row['link_original']); ?>
+                Link Original
             </a>
         </div>
 
         <div class="mb-3 usuario" style="margin: 40px 0 40px 0; padding: 0 40px 0 40px;">
-            <b> Autor: </b> 
+            <b> Autor(a/as/es): </b> 
                 <a>
                     <?php echo($row['nome_autor']); ?>
                 </a>
             <br>
-            <b> Redator: </b> 
+            <a>
+                <b> Redator: </b> 
+            </a>
                 <a>
                     <?php echo($row['nome_redator']); ?>
                 </a>
