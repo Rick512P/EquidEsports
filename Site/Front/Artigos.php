@@ -32,8 +32,6 @@
     $sql = "SELECT * FROM artigos LIMIT $start, $array_page";
     $stmt = $conexao->prepare($sql);
     $stmt->execute();
-
-    
 ?>
 
 <!DOCTYPE html>
@@ -76,9 +74,7 @@
                         echo "Autor(a/as/es): <b>" . $row_artigos['nome_autor'] . "</b><br><br/>";
                         echo text_limiter_caracter($row_artigos['paragrafos'], 300,"<a href='./leitor.php?id=".$row_artigos['idartigos'] . "'>...") . " " . "</a>" . "</b><br/>";
                         echo "<br/> <hr>";
-
-                    }
-                    
+                    }                    
                 ?>
                 <div class="text-center">
                     <?php
@@ -103,15 +99,11 @@
                     if ($pagina < $count_pgs){
                         echo "<a href='Artigos.php?pagina=$avanca'> > </a>";
                         echo "<a href='Artigos.php?pagina=$count_pgs'>   >></a>";
-                    }
-                    
+                    }                    
                     ?>
                 </div>
             </h4>
         </div>
     </div>
-    
-
 </body>
-
 </html>
