@@ -106,6 +106,9 @@
                     <a class="botoes cor-gradiente text-white" style="border: 4px solid black;" href="telaAdicionaArtigo.php" role="button">Cadastrar Novo Artigo</a>
                 </h2>
             </div>
+            <div class="container" style="margin: 40px 0 40px 35%; padding: 5%;">
+                <a class="botoes cor-gradiente text-white" style="border: 4px solid black;" href="../opcoes.php" role="button">Voltar</a>
+            </div>
         </div>
     </div>
     

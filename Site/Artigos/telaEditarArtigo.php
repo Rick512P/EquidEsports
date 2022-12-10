@@ -70,7 +70,9 @@ use LDAP\Result;
             <div class="container" style="margin: 40px 0 40px 0;">
                 <button type="submit" class="botoes cor-gradiente text-white link">Editar Artigo</button>
             </div>
-
+            <div class="container" style="margin: 40px 0 40px 35%; padding: 5%;">
+                <a class="botoes cor-gradiente text-white" style="border: 4px solid black;" href="index.php" role="button">Cancelar</a>
+            </div>
         </form>
     </div>
 

@@ -15,37 +15,39 @@ session_start();
 </head>
 
 <body>
-    <div class="container" style="border: 4px solid black; padding: 0; margin-top: 0%;">
-        <form action="login.php" method="POST">
-            <div class="imagem-topo">
-                <h4 class="text-center text-white">
-                    <b>Login</b>
-                </h4>
-            </div>
-            <?php
-            if(isset($_SESSION['nao_autenticado'])):
-            ?>
-            <div class="notification is-danger">
-                <p>ERRO: Usuário ou senha inválidos.</p>
-            </div>
-            <?php
-            endif;
-            unset($_SESSION['nao_autenticado']);
-            ?>
-            <div class="mb-3 usuario" style="margin: 40px 0 40px 0; padding: 0 40px 0 40px;">
-                <label for="InputNome" class="form-label">Nome</label>
-                <input type="text" class="form-control" name="nome" id="InputNome">
-            </div>
-            <div class="mb-3 usuario" style="margin: 40px 0 40px 0; padding: 0 40px 0 40px;">
-                <label for="InputSenha" class="form-label">Senha</label>
-                <input type="password" class="form-control" name="senha" id="InputSenha">
-            </div>
-            <div class="container" style="margin: 40px 0 40px 0;">
-                <div class="text-center">
-                    <button type="submit" class="botoes cor-gradiente text-white link">Conectar Usuário</button>
+    <div style="padding: 50% 5% 50% 5%;">
+        <div class="container" style="border: 4px solid black; padding: 0;">
+            <form action="login.php" method="POST">
+                <div class="imagem-topo">
+                    <h4 class="text-center text-white">
+                        <b>Login</b>
+                    </h4>
                 </div>
-            </div>
-        </form>
+                <?php
+                if(isset($_SESSION['nao_autenticado'])):
+                ?>
+                <div class="notification is-danger">
+                    <p>ERRO: Usuário ou senha inválidos.</p>
+                </div>
+                <?php
+                endif;
+                unset($_SESSION['nao_autenticado']);
+                ?>
+                <div class="mb-3 usuario" style="margin: 40px 0 40px 0; padding: 0 40px 0 40px;">
+                    <label for="InputNome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" name="nome" id="InputNome">
+                </div>
+                <div class="mb-3 usuario" style="margin: 40px 0 40px 0; padding: 0 40px 0 40px;">
+                    <label for="InputSenha" class="form-label">Senha</label>
+                    <input type="password" class="form-control" name="senha" id="InputSenha">
+                </div>
+                <div class="container" style="margin: 40px 0 40px 0;">
+                    <div class="text-center">
+                        <button type="submit" class="botoes cor-gradiente text-white link">Conectar Usuário</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 

@@ -36,12 +36,14 @@
             </div>
             <div class="mb-3 usuario" style="margin: 40px 0 40px 0; padding: 0 40px 0 40px;">
                 <label for="InputCFP" class="form-label">CPF</label>
-                <input type="text" class="form-control" name="CPF" id="InputCFP">
+                <input type="cpf" class="form-control" name="CPF" id="InputCFP">
             </div>
             <div class="container" style="margin: 40px 0 40px 0;">
                 <button type="submit" class="botoes cor-gradiente text-white link">Cadastrar Usuário</button>
             </div>
-
+            <div class="container" style="margin: 40px 0 40px 35%; padding: 5%;">
+                <a class="botoes cor-gradiente text-white" style="border: 4px solid black;" href="index.php" role="button">Cancelar</a>
+            </div>  
         </form>
     </div>
 
