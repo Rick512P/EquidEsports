@@ -1,3 +1,8 @@
+<?php 
+//Verifica se a sessão está ativa
+
+include_once('../verifica_login.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,8 +36,8 @@
                 <input type="password" class="form-control" name="senha" id="InputSenha">
             </div>
             <div class="mb-3 usuario" style="margin: 40px 0 40px 0; padding: 0 40px 0 40px;">
-                <label for="InputDataDeNascimento" class="form-label">Data De Nascimento</label>
-                <input type="text" class="form-control" name="data_de_nascimento" id="InputDataDeNascimento">
+                <label for="InputDataDeNascimento" class="form-label">Data De Nascimento <br> A coloque como está a baixo</label>
+                <input type="text" class="form-control" name="data_de_nascimento" id="InputDataDeNascimento" value="2022-12-28">
             </div>
             <div class="mb-3 usuario" style="margin: 40px 0 40px 0; padding: 0 40px 0 40px;">
                 <label for="InputCFP" class="form-label">CPF</label>

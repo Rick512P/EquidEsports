@@ -1,7 +1,12 @@
 <?php
+    //Verifica se a sessão está ativa
+
+    include_once('../verifica_login.php');
+
     //Conexão com o Banco
 
     include_once('../conexoes/conexaoartigo.php');
+    
     $conexao = criaConexao();
 
     //Paginação

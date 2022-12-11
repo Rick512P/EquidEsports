@@ -1,6 +1,7 @@
-<?php
+<?php 
+    //Verifica se a sessão está ativa
 
-use LDAP\Result;
+    include_once('../verifica_login.php');
 
     include_once('usuarioDao.php');
     

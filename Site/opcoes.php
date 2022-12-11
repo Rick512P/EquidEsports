@@ -1,3 +1,8 @@
+<?php
+//Verifica se a sessão está ativa
+
+include_once('./verifica_login.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,9 +17,11 @@
     <body>
         <div style="border: 0px solid black; padding: 0%;">
             <div class="imagem-topo">
-                <h4 class="text-center text-white"> 
-                    <b>Página Inicial</b>
-                </h4>                    
+                <h2 class="text-center text-white">
+                    <b>
+                        <?php echo "Seja Bem Vindo " . $_SESSION['nome'] . "!";?>
+                    </b>
+                </h2>                 
             </div>
             <div class="container" style="padding: 0%;">
                 <div class="text-center" style="padding: 1%; margin: 10%; margin-top:5%;">

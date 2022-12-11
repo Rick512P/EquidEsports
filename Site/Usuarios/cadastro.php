@@ -1,3 +1,8 @@
+<?php 
+//Verifica se a sessão está ativa
+
+include_once('../verifica_login.php');
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,7 +15,7 @@
             function redirectTime(){ // Função que define o tempo
                 window.location = "index.php" //Define o link de redirecionamento
             }
-</script>
+        </script>
 
     </head>
     <body onLoad="setTimeout('redirectTime()', 1500)">

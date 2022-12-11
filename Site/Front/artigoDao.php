@@ -1,5 +1,11 @@
 <?php
 
+    //Verifica se a sessão está ativa
+
+    include_once('../verifica_login.php');
+    
+    //Realiza a Conexão com o Banco de Dados
+
     include_once("../conexoes/conexaoartigo.php");
 
     function insereArtigo($titulo1, $subtitulo, $nome_autor, $nome_redator, $paragrafos, $rodape, $link_original)

@@ -1,7 +1,8 @@
 <?php
+    //Verifica se a sessão está ativa
 
-use LDAP\Result;
-
+    include_once('../verifica_login.php');
+    
     include_once('artigoDao.php');
     include_once("../conexoes/conexaoartigo.php");
 
