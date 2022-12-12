@@ -26,7 +26,6 @@ $stmt->execute();
 
 $test =  $stmt->fetch();
 
-print_r($test);
 
 if ($test != NULL){
     if ($test[6]==="yes"){
