@@ -29,10 +29,18 @@ $test =  $stmt->fetch();
 print_r($test);
 
 if ($test != NULL){
-    $_SESSION['nome'] = $nome;
-    header('Location: opcoes.php');
-    exit();
-}else{
+    if ($test[6]==="yes"){
+
+        $_SESSION['nome'] = $nome;
+        header('Location: opcoes.php');
+        exit();}
+
+    if ($test[6]==="no"){
+
+        $_SESSION['nome'] = $nome;
+        header('Location: Front/Artigos.php');
+        exit();}
+    }else{
     ?> 
     <html>
         <head>
