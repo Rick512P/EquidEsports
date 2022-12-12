@@ -45,6 +45,11 @@ session_start();
                     <div class="text-center">
                         <button type="submit" class="botoes cor-gradiente text-white link">Conectar Usuário</button>
                     </div>
+                    <div class="text-center" style="padding: 1%; margin: 10%; margin-top:5%;">
+                        <h4>
+                            <a class="botoes cor-gradiente text-white"  href="telaAdicionaUsuario.php" role="button">Novo? Crie uma conta!</a>
+                        </h4>
+                    </div>
                 </div>
             </form>
         </div>
