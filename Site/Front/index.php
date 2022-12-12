@@ -1,4 +1,5 @@
-<?php 
-include_once('../verifica_login.php');
+<?php
+include_once('../login/verifica_login.php');
+
 
 header('Location:Artigos.php');

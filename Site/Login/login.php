@@ -2,12 +2,12 @@
 date_default_timezone_set('America/Sao_Paulo');
 
 session_start();
-include_once("./conexoes/conexaousuario.php");
+include_once("../conexoes/conexaousuario.php");
 
 $conexao = criaConexao();  
 
 if(empty($_POST['nome']) || empty($_POST['senha'])) {
-	header('Location: index.php');
+	header('Location: ../');
 	exit();
 }
 
@@ -38,7 +38,7 @@ if ($test != NULL){
     if ($test[6]==="no"){
 
         $_SESSION['nome'] = $nome;
-        header('Location: Front/Artigos.php');
+        header('Location: ../Front/Artigos.php');
         exit();}
     }else{
     ?> 
@@ -51,7 +51,7 @@ if ($test != NULL){
             <link rel="stylesheet" href="./css/style.css">
             <script type="text/javascript">
                 function redirectTime(){ // Função que define o tempo
-                    window.location = "index.php" //Define o link de redirecionamento
+                    window.location = "../index.php" //Define o link de redirecionamento
                 }
             </script>
         </head>

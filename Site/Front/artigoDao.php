@@ -2,7 +2,8 @@
 
     //Verifica se a sessão está ativa
 
-    include_once('../verifica_login.php');
+    include_once('../login/verifica_login.php');
+
     
     //Realiza a Conexão com o Banco de Dados
 

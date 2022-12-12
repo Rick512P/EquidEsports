@@ -2,7 +2,7 @@
 
     //Verifica se a sessão está ativa
 
-    include_once('../verifica_login.php');
+    include_once('../login/verifica_login.php');
 
     include_once('artigoDao.php');
     include_once("../conexoes/conexaoartigo.php");

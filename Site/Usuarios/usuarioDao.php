@@ -1,8 +1,8 @@
 <?php
     //Verifica se a sessão está ativa
 
-    include_once('../verifica_login.php');
-    
+    include_once('../login/verifica_login.php');
+
     include_once('../conexoes/conexaousuario.php');
 
     function insereUsuario($nome, $email, $senha, $data_de_nascimento, $CPF, $ADMINISTRADOR)

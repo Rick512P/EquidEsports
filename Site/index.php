@@ -17,7 +17,7 @@ session_start();
 <body>
     <div style="padding: 50% 5% 50% 5%;">
         <div class="container" style="border: 4px solid black; padding: 0;">
-            <form action="login.php" method="POST">
+            <form action="./login/login.php" method="POST">
                 <div class="imagem-topo">
                     <h4 class="text-center text-white">
                         <b>Login</b>
@@ -47,7 +47,7 @@ session_start();
                     </div>
                     <div class="text-center" style="padding: 1%; margin: 10%; margin-top:5%;">
                         <h4>
-                            <a class="botoes cor-gradiente text-white"  href="telaAdicionaUsuario.php" role="button">Novo? Crie uma conta!</a>
+                            <a class="botoes cor-gradiente text-white"  href="./Cadastro/CadUser.php" role="button">Novo? Crie uma conta!</a>
                         </h4>
                     </div>
                 </div>
