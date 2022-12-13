@@ -56,6 +56,9 @@
         <div class="imagem-topo">
             <h4 class="text-center text-white"> 
                 <b>Artigos</b>
+                <h2>
+                    <a class="botoes cor-gradiente text-white" style="border: 4px solid black; margin: 75%;  padding: 0 5px 0 5px;" href="../Login/logout.php" role="button">Sair</a>
+                </h2>
             </h4>                    
         </div>
         <div class="container" style="padding: 8%;">
@@ -106,6 +109,11 @@
                         echo "<a href='Artigos.php?pagina=$count_pgs'>   >></a>";
                     }                    
                     ?>
+                </div>
+                <div class="text-center" style="padding: 0%; margin: 2%; margin-top:5%;">
+                    <h5>
+                        <a class="botoes cor-gradiente text-white" href="../Cadastro/AddArt.php" role="button">Cadastre um Novo Artigo Aqui!</a>
+                    </h5>
                 </div>
             </h4>
         </div>
