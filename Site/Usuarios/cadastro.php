@@ -30,7 +30,7 @@ include_once('../login/verifica_login.php');
 
             date_default_timezone_set('America/Sao_Paulo');
 
-            $nome = $_POST['nome'];
+            $nome = strtoupper($_POST['nome']);
             $email = $_POST['email'];
             $senha = $_POST['senha'];
             $data_de_nascimento = $_POST['data_de_nascimento'];

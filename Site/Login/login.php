@@ -30,13 +30,13 @@ $test =  $stmt->fetch();
 if ($test != NULL){
     if ($test[6]==="yes"){
 
-        $_SESSION['nome'] = $nome;
+        $_SESSION['nome'] = $test[1];
         header('Location: opcoes.php');
         exit();}
 
     if ($test[6]==="no"){
 
-        $_SESSION['nome'] = $nome;
+        $_SESSION['nome'] = $test[1];
         header('Location: ../Front/Artigos.php');
         exit();}
     }else{
