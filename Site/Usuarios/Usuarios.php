@@ -59,6 +59,9 @@
         <div class="imagem-topo">
             <h4 class="text-center text-white"> 
                 <b>Usuários</b>
+                <h2>
+                    <a class="botoes cor-gradiente text-white" style="border: 4px solid black; margin: 75%;  padding: 0 5px 0 5px;" href="../Login/logout.php" role="button">Sair</a>
+                </h2>
             </h4>                    
         </div>
         <div class="container" style="padding: 5%;">
