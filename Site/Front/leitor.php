@@ -29,57 +29,65 @@ include_once('../login/verifica_login.php');
 </head>
 
 <body>
-    <div class="container" style="border: 4px solid black; padding: 0; margin-top: 0%;">
-        <div class="imagem-topo">
-            <h4 class="text-center text-white">
-                <b><?php echo($row['titulo1']); ?></b>
-            </h4>
-        </div>
-                
-        <div class="mb-3 usuario" style="margin: 40px 0 40px 0; padding: 0 40px 0 40px;">
-            <b> Título: </b> 
-                <a> 
-                    <?php echo($row['titulo1']); ?> 
-                </a> 
-            <br>
-            <b> Subtítulo: </b> 
-                <a> 
-                    <?php echo($row['subtitulo']); ?> 
-                </a> 
-            <br>
-            <br>
-            <a>
-                <?php echo($row['paragrafos']); ?>
-            </a> 
-            <br>
-            <br>
-            <b> Rodapé: </b>  
+        <div class="container" style="border: 4px solid black; padding: 0; margin-top: 0%;">
+            <div class="imagem-topo">
+                <h4 class="text-center text-white">
+                    <b><?php echo($row['titulo1']); ?></b>
+                </h4>
+            </div>
+                    
+            <div class="mb-3 usuario" style="margin: 40px 0 40px 0; padding: 0 40px 0 40px;">
+                <b> Título: </b> 
+                    <a> 
+                        <?php echo($row['titulo1']); ?> 
+                    </a> 
+                <br>
+                <b> Subtítulo: </b> 
+                    <a> 
+                        <?php echo($row['subtitulo']); ?> 
+                    </a> 
+                <br>
+                <br>
                 <a>
-                    <?php echo($row['rodape']); ?>
+                    <?php echo($row['paragrafos']); ?>
                 </a> 
-            <br>
-            <a href='<?php echo($row['link_original']); ?>'>
-                Link Original
-            </a>
-        </div>
+                <br>
+                <br>
+                <b> Rodapé: </b>  
+                    <a>
+                        <?php echo($row['rodape']); ?>
+                    </a> 
+                <br>
+                <a href='<?php echo($row['link_original']); ?>'>
+                    Link Original
+                </a>
+            </div>
 
-        <div class="mb-3 usuario" style="margin: 40px 0 40px 0; padding: 0 40px 0 40px;">
-            <b> Autor(a/as/es): </b> 
+            <div class="mb-3 usuario" style="margin: 40px 0 40px 0; padding: 0 40px 0 40px;">
+                <b> Autor(a/as/es): </b> 
+                    <a>
+                        <?php echo($row['nome_autor']); ?>
+                    </a>
+                <br>
                 <a>
-                    <?php echo($row['nome_autor']); ?>
+                    <b> Redator: </b> 
                 </a>
-            <br>
-            <a>
-                <b> Redator: </b> 
-            </a>
-                <a>
-                    <?php echo($row['nome_redator']); ?>
-                </a>
+                    <a>
+                        <?php echo($row['nome_redator']); ?>
+                    </a>
+            </div>
         </div>
-    </div>
-    <div class="container" style="margin: 40px 0 40px 35%; padding: 5%;">
-        <a class="botoes cor-gradiente text-white" style="border: 4px solid black;" href="index.php" role="button">Voltar</a>
-    </div>
+        <?php 
+            echo "  <div class='container' style='margin: 10px 0 0 30%; padding: 5%;'>
+                        <a class='botoes cor-gradiente text-white'<a href='error.php?id="
+                            .$row['idartigos'] .
+                        "'role='button'>Indicar Erro</a>
+                    </div>"
+        ?>
+        <div class="container" style="margin: 0 0 20px 0; padding: 5%;">
+            <a class="botoes cor-gradiente text-white" href="index.php" role="button">Voltar</a>
+        </div>
+        
 </body>
 
 </html>

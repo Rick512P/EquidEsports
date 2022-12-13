@@ -17,7 +17,7 @@
             function redirectTime(){ // Função que define o tempo
                 window.location = "../Front/" //Define o link de redirecionamento
             }
-</script>
+        </script>   
 
     </head>
     <body onLoad="setTimeout('redirectTime()', 1500)">
